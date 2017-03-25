@@ -1,0 +1,11 @@
+This application is to present IDEA-170313 bug in IntelliJ IDEA.
+https://youtrack.jetbrains.com/issue/IDEA-170313#comment=27-2047140
+
+Instructions:
+1. Run the application in IntelliJ using debug. Set program arguments to "server".
+2. Set breakpoint in SampleManaged::stop.
+3. New instance of SampleManaged should be created. You should see "managed started" in log.
+4. Click on the "stop proccess". You should see "managed stopped" in log, however the debugger did not stopped.
+5. Run the application again.
+6. Use PID number from log to kill it externally: kill -15 [PID]
+7. The debugger stops in SampleManaged::stop.
